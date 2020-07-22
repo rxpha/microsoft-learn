@@ -1,7 +1,5 @@
 import random, time
 
-roll = 0
-count = 0
 qtd = 0
 name = ''
 players = []
@@ -17,6 +15,9 @@ for i in range(qtd):
         print('Bye.')
         exit()
     players.append(name)
+
+    count = 0
+    roll = 0
     while roll != 5:
         count = count + 1
         roll = random.randint(1, 5)
@@ -24,7 +25,5 @@ for i in range(qtd):
     else:
         score.append(count)
         print(f'{players[i]} scored {count}!')
-
-time.sleep(2)
-for k in range(len(score)):
-    print(f'{players[k]} won because took less rolls to roll a 5!')
+time.sleep(1)
+print(f'Won who scored ' + str(min(score)) + ' rolls!')
